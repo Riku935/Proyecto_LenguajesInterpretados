@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Game.obj.addScore(scoreGive);    Se comunica con el GameManager para reiniciar la escena pero lo tengo que consultar contigo Juan 
+            GameManager.obj.addScore(scoreGive);     
             AudioManager.obj.playCoin();
             //UIManager.obj.updateScore();
             FXManager.obj.showPop(transform.position);
