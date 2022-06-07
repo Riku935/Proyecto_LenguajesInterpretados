@@ -40,5 +40,6 @@ public class Com_Server : MonoBehaviour
 
         var texture = new Texture2D(0, 0, TextureFormat.ARGB32, false);
         //BindWebGLTexture(texture.GetNativeTexturePtr());
+
     }
 }
