@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "1234";
-$dbname = "Astronauta";
+$dbname = "ProyectoAstronauta";
 
 $p1 = $_REQUEST["user"];
 $p2 = $_REQUEST["password"];
@@ -14,8 +14,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO users (username, passwordd)
-VALUES ('Pedro','1234')";
+$sql = "INSERT INTO users (username, passwordd) VALUES
+( '".$p1."', '".$p2."' )";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
