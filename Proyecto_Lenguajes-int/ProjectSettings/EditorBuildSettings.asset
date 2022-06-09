@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Splash.unity
+    guid: 28c45caaa739a0f43b7cb637a232b40c
+  - enabled: 1
+    path: Assets/Scenes/Player.unity
+    guid: 0c6083a1dad323746a3bdadd2b94147a
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: Assets/Scenes/Enemy.unity
     guid: 8c3f16fa0fa0e2b429655e182d92c82f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 728f310d0f263764b885c1f9f4a4db2a
   m_configObjects: {}

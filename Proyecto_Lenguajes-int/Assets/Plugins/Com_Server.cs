@@ -23,11 +23,16 @@ public class Com_Server : MonoBehaviour
 
     [DllImport("__Internal")]
     private static extern void BindWebGLTexture(int texture);
+    /*
+    [DllImport("__Internal")]
+    private static extern void Usuario();*/
 
     void Start()
     {
         Hello();
 
+       // Usuario();
+        
         HelloString("This is a string.");
 
         float[] myArray = new float[10];
@@ -40,6 +45,6 @@ public class Com_Server : MonoBehaviour
 
         var texture = new Texture2D(0, 0, TextureFormat.ARGB32, false);
         //BindWebGLTexture(texture.GetNativeTexturePtr());
-
+        
     }
 }

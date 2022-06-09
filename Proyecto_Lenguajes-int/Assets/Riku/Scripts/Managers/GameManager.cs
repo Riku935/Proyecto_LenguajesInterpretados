@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class GameManager : MonoBehaviour
     public bool gameWin = false;
     public int score = 0;
     public string nombre;
+    public string RegisterUser;
+    public string RegisterPass;
+    public string LogUser;
+    public string LogPass;
+    
+    [DllImport("__Internal")]
+    private static extern string Usuario(string user, string pass);
+    [DllImport("__Internal")]
+    private static extern string UsuarioLogin(string userLog, string passLog);
 
     private void Awake()
     {
@@ -20,7 +30,28 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gamePaused = false;
-        //UIManager.obj.startGame();
+        
+    }
+
+    public void sendToPHP()
+    {
+        Usuario(RegisterUser, RegisterPass);
+    }
+    public void sendToPHPLogin()
+    {
+        UsuarioLogin(LogUser, LogPass);
+    }
+
+    public void Login()
+    {
+        if (LogUser == "usuario" && LogPass == "contraseña")
+        {
+            SceneManager.LoadScene("Player");
+        }
+        else
+        {
+            SceneManager.LoadScene("Splash");
+        }
     }
 
     public void addScore(int scoreGive)
@@ -28,19 +59,39 @@ public class GameManager : MonoBehaviour
         score += scoreGive;
     }
 
+    public void gameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void win()
+    {
+        winText.SetActive(true);
+        //Usuario();
+    }
+
     public void addText(string nombreGive)
     {
         nombre = nombreGive;
     }
 
-    public void gameOver()
+    public void addRegUser(string userReg)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        RegisterUser = userReg;
     }
-    public void win()
+    public void addRegPass(string PassReg)
     {
-        winText.SetActive(true);
+        RegisterPass = PassReg;
     }
+    public void addLogUser(string userLog)
+    {
+        LogUser = userLog;
+    }
+    public void addLogPass(string PassLog)
+    {
+        LogPass = PassLog;
+    }
+
     private void OnDestroy()
     {
         obj = null;

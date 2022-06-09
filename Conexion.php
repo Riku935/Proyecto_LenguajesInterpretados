@@ -4,6 +4,9 @@ $username = "root";
 $password = "1234";
 $dbname = "Astronauta";
 
+$p1 = $_REQUEST["user"];
+$p2 = $_REQUEST["password"];
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -12,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO users (username, passwordd)
-VALUES ('Luis','1234')";
+VALUES ('Pedro','1234')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
