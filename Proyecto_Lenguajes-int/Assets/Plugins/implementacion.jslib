@@ -49,17 +49,8 @@ mergeInto(LibraryManager.library, {
 
 
   },
-  UsuarioLogin: function(userLog, passLog){
-    var username = prompt ("Ingresa tu nombre de usuario");
-    console.log(UTF8ToString(userLog));
-    console.log(UTF8ToString(passLog));
-
-    var returnStr = "bla";
-    var bufferSize = lengthBytesUTF8(returnStr) + 1;
-    var buffer = _malloc(bufferSize);
-    stringToUTF8(returnStr, buffer, bufferSize);
-    return buffer;
-  }
+  
+  
 
 
 

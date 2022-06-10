@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
     
     [DllImport("__Internal")]
     private static extern string Usuario(string user, string pass);
-    [DllImport("__Internal")]
-    private static extern string UsuarioLogin(string userLog, string passLog);
-
+    //[DllImport("__Internal")]
+    //private static extern string UsuarioLogin(string userLog, string passLog);
+    
     private void Awake()
     {
         obj = this;
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     }
     public void sendToPHPLogin()
     {
-        UsuarioLogin(LogUser, LogPass);
+        //UsuarioLogin(LogUser, LogPass);
     }
 
     public void Login()
